@@ -2,22 +2,29 @@ import os
 
 ###
 ### SECRETS
-###
 
 OPENAI_API_KEY= os.getenv("OPENAI_API_KEY")
 
 ###
-### OPENAI
+### GENERAL
+
+# Name of the chatter that will be attached to it's messages in conversation history. Example: "Deckard"
+CHATTER_NAME="James"
+
+# Name of the AI that will be attached to it's messages in conversation history. Example: "Roy"
+AI_NAME="AI"
+
 ###
+### OPENAI
 
 # Pretrained models in order of complexity: ada, babbage, curie, davinci
-OPENAI_MODEL="ada"
+OPENAI_MODEL="davinci"
 
 # Controls randomness. 0.00 to 1.00
 TEMPERATURE=0.5
 
 # Length of tokens between prompt and completion. 1 token = 4 characters. Max=4000 (INT)
-MAX_TOKENS=25
+MAX_TOKENS=300
 
 # Controls diversity. Range: 0.00 to 1.00
 TOP_P=1.0
@@ -28,13 +35,9 @@ FREQUENCY_PENALTY=0.5
 # Higher more likely to talk about new subjects. Range: 0.00 to 2.00 
 PRESENCE_PENALTY=0.0
 
-# Where it will stop generating further tokens. Max entries: 4. (List)
-STOP=["You:"]
+##########
+######################## BELOW HERE DOES NOT NEED TO BE EDITTED ########################
 
-
-###
-### Models
-###
 MODEL_DICT = {
     "ada" : "text-ada-001",
     "babbage" : "text-babbage-001",
@@ -43,3 +46,6 @@ MODEL_DICT = {
 }
 OPENAI_MODEL = MODEL_DICT.get(OPENAI_MODEL).lower()
 assert OPENAI_MODEL
+
+# Where it will stop generating further tokens. Max entries: 4. (List)
+STOP_MSG=[f"{AI_NAME}:", f"{CHATTER_NAME}:"]

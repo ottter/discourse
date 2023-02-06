@@ -1,23 +1,19 @@
-import os
-import json
-import openai
-import requests
 from settings import *
+from model.create import create_request
 
-openai.api_key = OPENAI_API_KEY
+def main():
+    openai_input = input('Text:')
 
-openai_prompt = input('Text:')
+    response = create_request(openai_input)
+    print(response)
 
-response = openai.Completion.create(
-  model=OPENAI_MODEL,
-  prompt=openai_prompt,
-  temperature=0.5,
-  max_tokens=25,
-  top_p=1.0,
-  frequency_penalty=0.5,
-  presence_penalty=0.0,
-  stop=["You:"]
-)
+    prompt_response = response['choices'][0]['text'].replace('\n', '')
+    # Save all conversations in a file that will be used as the prompt for future conversations
+    prompt_file = open("prompts/generated_prompt.txt", "a")
+    prompt_file.write(f"{STOP_MSG[1]} {openai_input}\n{STOP_MSG[0]} {prompt_response}\n")
+    prompt_file.close()
 
-# print(response["choices"][0]["text"])
-print(response)
+    return
+
+if __name__ == "__main__":
+    main()
