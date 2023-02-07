@@ -3,7 +3,9 @@ from model.create import create_request
 
 def main():
     openai_input = input('Text:')
-
+    
+    # openai_input is used as the prompt that all conversation is based on, along with the base pretrained model. 
+    # check README.md > Important Links for more info on creating a good prompt
     response = create_request(openai_input)
     print(response)
 

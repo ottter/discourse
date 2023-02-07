@@ -6,13 +6,14 @@ from settings import *
 
 openai.api_key = OPENAI_API_KEY
 
-# "start" is the name of the AI and "restart" the name of chatter
-# declared in settings.py under AI_NAME and CHATTER_NAME
+# "start" is the name of the AI and is declared in settings.py under AI_NAME
 start_sequence = f"\n{STOP_MSG[0]}"
+# "restart" the name of chatter and is declared in settings.py under CHATTER_NAME
 restart_sequence = f"\n{STOP_MSG[1]}"
 
 def create_request(openai_input):
 
+    # Details on all these variables are available in settings.py
     response = openai.Completion.create(
         model=OPENAI_MODEL,
         prompt=openai_input,

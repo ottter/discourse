@@ -1,5 +1,8 @@
 import os
 
+# TODO: validation checks on all variables below
+# TODO: Split out python code from .yaml tier data to create proper settings file
+
 ###
 ### SECRETS
 
@@ -36,7 +39,7 @@ FREQUENCY_PENALTY=0.5
 PRESENCE_PENALTY=0.0
 
 ##########
-######################## BELOW HERE DOES NOT NEED TO BE EDITTED ########################
+######################## BELOW HERE SHOULD NOT BE EDITTED ########################
 
 MODEL_DICT = {
     "ada" : "text-ada-001",
