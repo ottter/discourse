@@ -18,6 +18,31 @@ Install required Python packages and run the script
     pip install -r requirements.txt
     python3 main.py
 
+-----------------------
+
+## Github Actions
+
+GitHub Actions utilized in this project:
+
+- [Pylint](https://pypi.org/project/pylint/)
+- [GitHub Actions Status Embed for Discord](https://github.com/marketplace/actions/github-actions-status-embed-for-discord)
+- [CodeQL Analysis](https://github.com/github/codeql-action)
+
+**Pylint** - Static code analysis
+
+    # run locally
+    pylint --rcfile .pylintrc $(git ls-files '*.py')
+
+    # run locally without adding pylint to PATH
+    python -m pylint --rcfile .pylintrc $(git ls-files '*.py')
+
+    # Or generate default pylint config file:
+    pylint --generate-rcfile > ./.pylintrc
+
+**CodeQL Analysis** - Semantic code analysis engine
+
+-----------------------
+
 ## Important Links
 
 [Environment Varibales on Windows](https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html)
