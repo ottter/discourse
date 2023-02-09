@@ -15,7 +15,7 @@ OPENAI_API_KEY= os.getenv("OPENAI_API_KEY")
 CHATTER_NAME="James"
 
 # Name of the AI that will be attached to it's messages in conversation history. Example: "Roy"
-AI_NAME="AI"
+AI_NAME="Bardock"
 
 ###
 ### OPENAI

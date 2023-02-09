@@ -11,17 +11,17 @@ start_sequence = f"\n{STOP_MSG[0]}"
 # "restart" the name of chatter and is declared in settings.py under CHATTER_NAME
 restart_sequence = f"\n{STOP_MSG[1]}"
 
-def create_request(openai_input):
+def create_request(INPUT):
 
     # Details on all these variables are available in settings.py
     response = openai.Completion.create(
         model=OPENAI_MODEL,
-        prompt=openai_input,
-        temperature=0.5,
-        max_tokens=25,
-        top_p=1.0,
-        frequency_penalty=0.5,
-        presence_penalty=0.0,
+        prompt=INPUT,
+        temperature=TEMPERATURE,
+        max_tokens=MAX_TOKENS,
+        top_p=TOP_P,
+        frequency_penalty=FREQUENCY_PENALTY,
+        presence_penalty=PRESENCE_PENALTY,
         stop=STOP_MSG
         )
 
