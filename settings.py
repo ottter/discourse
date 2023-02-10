@@ -1,7 +1,9 @@
+"""
+Settings file. Follow instructions and keep values within given ranges
+"""
 import os
 
 # TODO: validation checks on all variables below
-# TODO: Split out python code from .yaml tier data to create proper settings file
 
 ###
 ### SECRETS
@@ -11,10 +13,10 @@ OPENAI_API_KEY= os.getenv("OPENAI_API_KEY")
 ###
 ### GENERAL
 
-# Name of the chatter that will be attached to it's messages in conversation history. Example: "Deckard"
+# Name of the chatter that will be attached to it's messages in conversation history. Ex: "Deckard"
 CHATTER_NAME="James"
 
-# Name of the AI that will be attached to it's messages in conversation history. Example: "Roy"
+# Name of the AI that will be attached to it's messages in conversation history. Ex: "Roy"
 AI_NAME="Bardock"
 
 ###
@@ -35,7 +37,7 @@ TOP_P=1.0
 # Decreases chances of repeating the same line. Range: 0.00 to 2.00
 FREQUENCY_PENALTY=0.5
 
-# Higher more likely to talk about new subjects. Range: 0.00 to 2.00 
+# Higher more likely to talk about new subjects. Range: 0.00 to 2.00
 PRESENCE_PENALTY=0.0
 
 ##########
